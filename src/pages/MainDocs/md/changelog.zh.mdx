@@ -1,0 +1,316 @@
+import offlineLogImg from '@/assets/image/screenshot/v1.9.2-offline-log-size.png';
+import harborRecordStatusImg from '@/assets/image/screenshot/harbor-record-status-zh.gif';
+
+## v2.4.6
+
+- 🆕 更新 `rrweb` 相关依赖到 `2.0.0-alpha.20` 版本;
+- 🐛 修复一些问题;
+
+## v2.4.5
+
+- 🆕 修复取消的网络请求的响应数据在详情面板中显示为 `"undefined"` 的问题，查看详情：https://github.com/HuolalaTech/page-spy-web/issues/390；
+
+## v2.4.4
+
+- 🆕 调整网络面板的交互；
+- 🐛 修复网络面板出现重复数据的问题，以及修复 `fetch` 的请求时长；
+
+## v2.4.3
+
+- 🐛 修复浏览器 SDK 逻辑，使 `socketStore.connectable` 状态与 `offline` 初始化选项关联;
+
+
+## v2.4.2
+
+- 🐛 修复浏览器 SDK 在页面切换到前台时自动重连的问题，查看详情：https://github.com/HuolalaTech/page-spy/pull/146;
+
+## v2.4.1
+
+- 🐛 修复 SDK 的 WebSocket 插件无法正常工作的问题;
+- 🐛 修复调试端处理 WebSocket / EventSource 请求响应数据时异常的问题;
+
+## v2.4.0
+
+- 🆕 浏览器和 ReactNative 支持查看 WebSocket 请求，查看详情：https://github.com/HuolalaTech/page-spy/pull/143;
+- 🐛 修复发布 NPM 包工作流里依赖包版本不正确的问题;
+
+## v2.3.3
+
+- 🐛 修复 v2.3.2 镜像缺失 libc.so 的问题;
+
+## v2.3.2
+
+- 🆕 支持配置 mysql 用于持久化离线日志数据，查看详情：https://github.com/HuolalaTech/page-spy-api/issues/15;
+- 🆕 支持多容器部署时使用 dns name 代替 IP 地址，查看详情：https://github.com/HuolalaTech/page-spy-api/issues/16;
+- 🐛 修复一些问题;
+
+
+## v2.3.1
+
+- 🐛 修复 v2.3.0 版本中权限认证的问题，使用方式无变化。查看详情：https://github.com/HuolalaTech/page-spy-web/pull/343;
+
+## v2.3.0
+
+> ⚠️ <b style={{ color: '#ff4d4f' }}>注意：v2.3.0 版本中权限认证功能存在问题，请使用 [v2.3.1](./changelog#v2-3-1) 版本。</b>
+
+- 🆕 支持在启动服务时设置密码以保护调试端安全，点击查看 [使用说明](./faq#security)。查看详情：https://github.com/HuolalaTech/page-spy-web/pull/333, https://github.com/HuolalaTech/page-spy-api/pull/13;
+
+## v2.2.4
+
+- 🐛 浏览器 SDK 修复了资源收集器在低版本浏览器中无法正常工作的问题，查看详情：https://github.com/HuolalaTech/page-spy/pull/140;
+
+## v2.2.3
+
+- 🆕 优化「暂停录制」状态时弹窗界面的交互；
+- 🆕 调试端全局支持拖拽离线日志文件进行回放；
+- 🆕 SDK 更新配置校验，错误提示更加友好，查看详情：https://github.com/HuolalaTech/page-spy/pull/138;
+- 🐛 修复回放页面无法播放的问题，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/324;
+- 🐛 修复悬浮球在拖拽时遇到 iframe 元素不跟手的问题，查看详情：https://github.com/HuolalaTech/page-spy/pull/137;
+
+## v2.2.2
+
+- 🆕 SDK 弹窗中显示录制的状态（录制中 / 已暂停）信息，点击切换录制状态;
+  <a href={harborRecordStatusImg} target="_blank">
+    <img src={harborRecordStatusImg} />
+  </a>
+
+## v2.2.1
+
+- 🎉 官方浏览器插件 [PageSpy](https://chromewebstore.google.com/detail/pagespy/kpfigmbgeedkgnjnlpilghiffepahlmk) 上架 Chrome 应用商店，欢迎下载使用;
+- 🆕 新增 [O-Spy](/o-spy) 服务，没有任何门槛、一行代码接入；
+- 🆕 文档支持搜索，**⌘ + K** 即刻体验（Windows 上：Ctrl + K） 查看详情：https://github.com/HuolalaTech/page-spy-web/pull/320;
+- 🆕 用户体验优化，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/317;
+  - Console 面板采用虚拟滚动，大数据集时性能提升明显；
+  - Network / Storage 面板点击表头支持排序；
+  - 回放时用户操作轨迹增加鼠标指针；
+- 🐛 修复了一些问题；
+
+## v2.2.0
+
+- 🆕 官网上线 O-Spy，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/315;
+- 🆕 新增 [@huolala-tech/page-spy-plugin-ospy](https://github.com/HuolalaTech/page-spy/tree/main/packages/page-spy-plugin-ospy) 离线记录插件;
+- 🟡 [@huolala-tech/page-spy-plugin-whole-bundle](https://github.com/HuolalaTech/page-spy/tree/main/packages/page-spy-whole-bundle) 已废弃不再新增功能;
+
+## v2.1.3
+
+- 🐛 回放页面的 Network 面板支持类型筛选;
+
+## v2.1.2
+
+- 🆕 回放页面的用户轨迹面板支持基础选中操作;
+- 🆕 支持查看网页的静态资源请求，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/309;
+- 🐛 浏览器端 SDK 修复操作时间段日志报错的问题，查看详情：https://github.com/HuolalaTech/page-spy/pull/131;
+- 🐛 浏览器端 SDK 修复异步复制导致失败的问题，查看详情：https://github.com/HuolalaTech/page-spy/pull/130;
+- 🐛 修复 `uni.request` 返回值问题，查看详情：https://github.com/HuolalaTech/page-spy-web/issues/306;
+
+## v2.1.1
+
+- 🆕 浏览器端 SDK 支持手势动态开启，查看 [使用说明](./pagespy#config-gesture);
+  ```ts
+  new PageSpy({
+    ...,
+    gesture: ['U', 'U', 'D', 'D', 'L', 'R', 'L', 'R'],
+  })
+  ```
+
+## v2.1.0
+
+- 🆕 重构 `WholeBundlePlugin` 并更新官网回放实验室页面：https://github.com/HuolalaTech/page-spy/pull/125 、https://github.com/HuolalaTech/page-spy-web/pull/304;
+- 🆕 优化定位源码的功能：https://github.com/HuolalaTech/page-spy-web/pull/300;
+- 🆕 小程序新增 **System** 面板：https://github.com/HuolalaTech/page-spy/pull/123 、https://github.com/HuolalaTech/page-spy-web/pull/299;
+- 🆕 优化小程序离线日志功能的兼容性;
+- 🆕 悬浮球拖拽后记忆位置：https://github.com/HuolalaTech/page-spy/pull/126;
+- 🆕 浏览器端 SDK 新增 CSS 特性检测：https://github.com/HuolalaTech/page-spy/pull/128;
+- 🐛 修复一些问题;
+
+## v2.0.2
+
+- 🐛 修复 `DataHarborPlugin` 的默认值导致无法下载;
+
+## v2.0.1
+
+- 🆕 `DataHarborPlugin` 支持传入 [onAfterUpload](./data-harbor#constructor) 自定义上传后的动作。查看详情：https://github.com/HuolalaTech/page-spy/pull/119;
+- 🐛 修复一些问题。查看详情：https://github.com/HuolalaTech/page-spy/pull/118 、https://github.com/HuolalaTech/page-spy/pull/120;
+
+## v2.0.0
+
+- 🆕 浏览器端弹窗改版，支持定制主题色、品牌，新增时间段日志选择器、备注字段。查看详情：https://github.com/HuolalaTech/page-spy/pull/113;
+- 🆕 小程序端新增方法唤起弹窗显示 PageSpy 信息，并支持上传离线日志。查看详情：https://github.com/HuolalaTech/page-spy/pull/112;
+- 🐛 修复一些问题;
+
+## v1.9.6
+
+- 🆕 DataHarborPlugin 插件新增原型方法。查看详情：https://github.com/HuolalaTech/page-spy/pull/110;
+  - `$harbor.pause()`：暂停记录;
+  - `$harbor.resume()`: 恢复记录，和 `pause()` 对应;
+  - `$harbor.reharbor()`：清空已记录的数据并重新制作。
+- 🆕 回放页面对于「对象不可展开」新增提示;
+- 🐛 修复 `application/x-www-form-urlencoded` 展示的 Payload。查看详情：https://github.com/HuolalaTech/page-spy-web/issues/267;
+
+## v1.9.5
+
+- 🆕 新增 DockerHub 镜像: https://hub.docker.com/r/huolalatech/page-spy-web;
+- 🆕 新增 宝塔 一键部署说明文档;
+
+## v1.9.4
+
+- 🐛 修复一些问题;
+
+## v1.9.3
+
+- 🆕 调试端 Network 面板支持关键字筛选过滤。查看详情：https://github.com/HuolalaTech/page-spy-web/pull/262;
+- 🆕 调试端日志回放页面的 Console 面板支持跟随滚动，优化消息通知。查看详情：https://github.com/HuolalaTech/page-spy-web/pull/264;
+- 🐛 SDK 优化 `ErrorPlugin` 的错误信息;
+
+## v1.9.2
+
+- 🆕 实例化参数新增 `dataProcessor` 选项用于过滤或者处理数据。查看详情：https://github.com/HuolalaTech/page-spy/pull/106;
+
+  <blockquote>
+    <details>
+      <summary>点击展开查看示例。</summary>
+      ```ts
+      window.$pageSpy = new PageSpy({
+        ...,
+        dataProcessor: {
+          console: (data) => {
+            // 打印内容中如果有 "secret" 字符则忽略（不会发送到调试端）
+            if (data.logs.some(i => typeof i === 'string' && i.includes('secret'))) return false;
+          },
+          network: (data) => {
+            // 忽略数据打点类的请求
+            if (/(sentry|metric|collect)/.test(data.url)) return false
+          },,
+          storage: (data) => {
+            // cookie 中的键如果是下划线开头，让调试端看到的值为 "*******"
+            if (data.type === "cookie" && data.action === "get") {
+              data.data.forEach((i) => {
+                if (i.name.startsWith("_")) {
+                  i.value = "*******";
+                }
+              });
+            }
+          },
+        },
+      });
+      ```
+    </details>
+  </blockquote>
+
+- 🆕 调整上传的日志数据，查看详情：https://github.com/HuolalaTech/page-spy/pull/107;
+
+  <a href={offlineLogImg} target="_blank">
+    <img src={offlineLogImg} />
+  </a>
+
+- 🆕 交互调整。
+  - 点击日志回放的进度条保持播放状态，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/258;
+  - 表格头支持拖拽，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/257;
+  - 支持识别华为浏览器，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/256;
+
+## v1.9.1
+
+- 🆕 实例化参数新增 `serializeData: boolean` 选项，用于指定是否允许 SDK 在收集离线日志时，序列化非基本类型的数据，默认值 `false`。查看详情：https://github.com/HuolalaTech/page-spy-web/pull/241 / https://github.com/HuolalaTech/page-spy/pull/103;
+  
+  开启后，console 打印的数据在日志回放面板上支持展开查看，使用方式：
+  
+  ```ts
+  window.$pageSpy = new PageSpy({
+    ...
+    // 注意，序列化过程可能会产生副作用，为了安全起见，默认 false 不序列化;
+    serializeData: true
+  })
+  ```
+
+- 🆕 优化 Network 展示的信息，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/239;
+- 🆕 回放面板支持回放 canvas 内容，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/238;
+- 🆕 回放时左侧的操作轨迹展示点击动作;进度条上现在只展示点击、报错，其他数据活动通过 Tab 通知。查看详情：https://github.com/HuolalaTech/page-spy-web/pull/244 / https://github.com/HuolalaTech/page-spy-web/pull/247
+- 🐛 修复回放日志列表的交互，查看详情：https://github.com/HuolalaTech/page-spy-web/pull/242;
+- 🐛 修复一些问题：
+  - 服务端跨域配置不生效;
+  - 服务端日志删除速度过慢;
+  - 离线日志现在记录网络请求的完整生命周期;
+  - 格式化 SDK 下载的文件名;
+
+## v1.9.0
+
+- 🆕 全新的文档页面;
+- 🆕 将动态执行代码能力从小程序 SDK 中拆出，封装为独立插件 [@huolala-tech/page-spy-plugin-mp-eval](https://www.npmjs.com/package/@huolala-tech/page-spy-plugin-mp-eval)，以减少对小程序审核的影响;
+- 🆕 兼容小程序能力：GET 请求自动将 body 转为 query string: https://github.com/HuolalaTech/page-spy-web/issues/199;
+- 🐛 修复小程序 `getAccountInfoSync` 兼容性问题: https://github.com/HuolalaTech/page-spy-web/issues/213;
+- 🐛 修复小程序 没有透传 `updateRoomInfo` 类型定义: https://github.com/HuolalaTech/page-spy-web/issues/213;
+
+## v1.8.10
+
+本次更新主要针对「错误定位源码」功能做了许多优化。具体内容如下：
+
+- 🆕 「日志回放页面」的 error 也支持定位源码;
+- 🆕 之前仅支持对捕获的错误定位源码，现在 console.xxx(`Error`) 也可以定位源码，查看详情 https://github.com/HuolalaTech/page-spy-web/pull/212;
+- 🆕 源码中如果存在 `\t`，提供选项让大家选择 1 个制表符 = N 个空格;
+- 🐛 修复 logo 交互问题，查看详情 https://github.com/HuolalaTech/page-spy-web/issues/211;
+
+## v1.8.9
+
+- 🆕 支持调试 [`React Native`](./react-native) 应用，查看详情 https://github.com/HuolalaTech/page-spy/pull/87 / https://github.com/HuolalaTech/page-spy-web/pull/190;
+- 🆕 支持调试 [鸿蒙 App](./harmony) 应用，查看详情 https://github.com/HuolalaTech/page-spy-web/pull/191 / https://github.com/HuolalaTech/page-spy/pull/88;
+- 🆕 Web 应用支持查看 `EventSource` 请求响应数据，优化网络面板布局，查看详情 https://github.com/HuolalaTech/page-spy-web/pull/206 / https://github.com/HuolalaTech/page-spy-web/issues/202 / https://github.com/HuolalaTech/page-spy-web/issues/183;
+- 🆕 优化消息类型，调试端界面响应更快，查看详情 https://github.com/HuolalaTech/page-spy/pull/91 / https://github.com/HuolalaTech/page-spy-web/pull/201;
+- 🆕 房间列表页面限制最多展示 30 个面板，查看详情 https://github.com/HuolalaTech/page-spy-web/pull/204;
+- 🐛 修复 `$pageSpy.abort()` 误清除事件，查看详情 https://github.com/HuolalaTech/page-spy-web/issues/205 / https://github.com/HuolalaTech/page-spy/pull/95;
+
+## v1.8.8
+
+- 🆕 重构日志回放页，回放长时间、大体积的离线日志数据时的交互更加丝滑，查看详情 https://github.com/HuolalaTech/page-spy-web/issues/186;
+- 🆕 适配 UniApp 打包成原生 App，查看详情 https://github.com/HuolalaTech/page-spy/pull/90 / https://github.com/HuolalaTech/page-spy-web/pull/197;
+- 🐛 修复网络请求头中存在自引用导致 Network 插件异常，查看详情 https://github.com/HuolalaTech/page-spy/pull/89 / https://github.com/HuolalaTech/page-spy-web/issues/193;
+- 🐛 修复 Page 面板上的 html 标签展示 https://github.com/HuolalaTech/page-spy-web/pull/196;
+
+## v1.8.7
+
+- 🆕 SDK 优化发送消息时机，查看详情 https://github.com/HuolalaTech/page-spy/pull/84;
+- 🐛 修复 SDK 重连异常的问题;
+
+## v1.8.6
+
+- 🆕 SDK 断连后会指数重试建立连接（强制创建房间），重试时间的间隔最多不超过 (1.5 ** 4 * 2000)ms，查看详情 https://github.com/HuolalaTech/page-spy/pull/78;
+- 🆕 SDK 新增 useSecret 参数，默认值 false。设置 true 后 SDK 会为房间生成 6 位数的随机密码，调试端需要获知密码后才可进入调试房间，查看详情 https://github.com/HuolalaTech/page-spy/pull/78;
+- 🆕 支持动态更新 title / project 参数，通过 window.$pageSpy.updateRoomInfo(\{ title: 'xxx', project: 'xxx' \})，查看详情 https://github.com/HuolalaTech/page-spy/pull/78;
+- 🆕 浏览器 SDK 渲染的悬浮球拖拽到上、下、左、右侧后会自动收起，查看详情 https://github.com/HuolalaTech/page-spy/pull/80;
+- 🆕 调试端优化房间列表展示;
+- 🆕 服务端不再序列化数据，性能大幅提升;
+- 🐛 修复 docker 重新部署日志卷数据未正确找到的问题;
+- 🐛 修复其他一些问题，查看详情 https://github.com/HuolalaTech/page-spy-web/issues/172 / https://github.com/HuolalaTech/page-spy/pull/79;
+
+## v1.8.5
+
+- 🆕 移除不支持的系统架构;
+
+## v1.8.4
+
+- 🆕 SDK 优化缓存策略，避免客户端缓存导致的运行内存过大 https://github.com/HuolalaTech/page-spy-web/issues/169
+
+## v1.8.3
+
+- 🆕 支持调试 Taro 小程序，查看 [@huolala-tech/page-spy-taro](https://github.com/HuolalaTech/page-spy/tree/main/packages/page-spy-taro);
+- 🆕 支持调试鸿蒙 App，查看 [@huolala/page-spy-harmony](https://ohpm.openharmony.cn/#/cn/detail/@huolala%2Fpage-spy-harmony);
+  > 基于 Harmony API 9 开发。
+- 🐛 优化 NetworkPlugin 在请求错误时的处理行为;
+
+## v1.8.2
+
+- 🆕 修复上个版本的 npm package 在部分系统架构中无法安装的问题;
+
+## v1.8.1
+
+- 🆕 在小程序集成文档中添加了 “提醒内容”;
+- 🆕 日志回放页面：进度条上显示汇总的活动热度;
+
+## v1.8.0
+
+- 🆕 小程序支持发送代码到客户端远程执行的功能;
+- 🆕 `DataHarborPlugin` 支持上传离线日志，调试端新增日志文件列表页面;
+- 🆕 优化日志回放页面功能：支持拖拽改变布局、倍速播放;
+
+## More...
+
+更早的发布内容请前往 [Release](https://github.com/HuolalaTech/page-spy-web/releases) 页面查看。

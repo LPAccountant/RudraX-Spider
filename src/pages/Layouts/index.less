@@ -1,0 +1,110 @@
+.layouts {
+  height: 100%;
+  overflow: hidden;
+  #scrollbar.light();
+  .ant-layout-header {
+    position: relative;
+    padding-inline: 0;
+    z-index: 100;
+  }
+  .ant-layout-content {
+    overflow: auto;
+  }
+  .header {
+    position: relative;
+    padding-inline: 12px;
+    height: var(--header-height);
+    box-shadow: 0 2px 20px rgba(0, 212, 170, 0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    z-index: 10;
+    border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00D4AA 0%, #7B2CBF 50%, #00D4AA 100%);
+      background-size: 200% 100%;
+      animation: header-gradient 3s linear infinite;
+    }
+    
+    .third-brand {
+      display: none;
+      line-height: 1;
+    }
+    &-left {
+      .open-cmdk-button {
+        display: none;
+      }
+    }
+  }
+}
+
+@keyframes header-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+.dark {
+  .header {
+    box-shadow: 0 2px 20px rgba(0, 212, 170, 0.15);
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-bottom: 1px solid rgba(0, 212, 170, 0.15);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00D4AA 0%, #7B2CBF 50%, #00D4AA 100%);
+      background-size: 200% 100%;
+      animation: header-gradient 3s linear infinite;
+    }
+    
+    a,
+    .logo-name {
+      color: #fff;
+      word-break: keep-all;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .layouts {
+    .header {
+      padding-inline: 16px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .layouts {
+    .header {
+      padding-inline: 16px;
+      .third-brand {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .layouts {
+    .header {
+      .header-left .open-cmdk-button {
+        display: flex;
+      }
+      .header-right .open-cmdk-button {
+        display: none;
+      }
+    }
+  }
+}

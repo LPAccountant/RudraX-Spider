@@ -1,0 +1,85 @@
+
+[license-img]: https://img.shields.io/github/license/HuolalaTech/page-spy-web?label=License
+[license-url]: https://github.com/HuolalaTech/page-spy-web/blob/main/LICENSE
+[sdk-ver-img]: https://img.shields.io/npm/v/@huolala-tech/page-spy-plugin-ospy?label=OSpy&color=white
+[sdk-ver-url]: https://npmjs.com/package/@huolala-tech/page-spy-plugin-ospy
+
+import Icon from '@ant-design/icons';
+import Logo from '@/assets/image/o-spy.svg?react';
+import workflow from '@/assets/image/screenshot/ospy-workflow.zh.png';
+import { Link } from 'react-router-dom';
+
+<div align="center">
+  <Icon component={Logo} style={{ fontSize: 100, color: '#fff' }} />
+  <h1>O-Spy</h1>
+  <h5>离线记录，完整回放。</h5>
+</div>
+
+<div className='badges'>
+  [![SDK version][sdk-ver-img]][sdk-ver-url]
+  [![license][license-img]][license-url]
+</div>
+
+
+## 什么是 O-Spy？#what-is-ospy
+
+O-Spy（发音 /əʊ spaɪ/，类似 **"Oh-Spy"**）是一个轻量级的 Web 调试工具，专注于**离线记录**程序运行数据。无需部署服务器，所有数据都存储在本地，支持完整回放调试，[点击查看演示](/o-spy?url=demo)。
+
+核心特性：
+
+- 🚀 **零部署**：无需搭建服务器，引入即用
+- 📦 **本地存储**：数据不上传，保护隐私安全
+- 🎬 **完整回放**：像看录像一样重现问题场景
+- 🎨 **支持自定义**：主题、按钮样式随心配置
+
+工作流程：
+
+<a href={workflow} target="_blank">
+  <img src={workflow} style={{width: '100%'}} />
+</a>
+
+## 快速上手#quick-start
+
+只需三步，即可体验 O-Spy 的强大功能。
+
+### 第一步：引入 O-Spy#step-1
+
+O-Spy 与框架无关，支持多种引入方式，选择你喜欢的即可：
+
+import { ImportGuide } from '@/pages/OSpy/components/ImportGuide';
+
+<ImportGuide showConfig={false} />
+
+引入成功后，页面右下角会出现一个可拖拽的 "O-Spy" 按钮，点击试试看 :)
+
+import { CallOSpy } from '../md-components/CallOSPy';
+
+<CallOSpy />
+
+### 第二步：生成并导出数据#step-2
+
+为了演示效果，当前页面已经集成了 O-Spy。让我们模拟一些实际使用场景，生成调试数据：
+
+import { MakeData } from '../md-components/MakeData'
+
+<MakeData />
+
+点击上方按钮产生一些数据后，按以下步骤导出：
+
+1. 点击右下角 O-Spy 悬浮按钮，打开操作面板
+2. 点击 **"导出日志"** 按钮
+3. 浏览器会自动下载一个 `.json` 格式的日志文件
+
+> 💡 **提示**：导出的 JSON 文件包含了页面的所有运行数据，包括控制台日志、网络请求、页面操作等。
+
+### 第三步：回放调试#step-3
+
+现在让我们回放刚才导出的数据：
+
+1. 前往 <Link to="/o-spy?url=" target='_blank'>回放页面</Link>
+2. 点击左上角的 **"选择日志"** 按钮
+3. 选择刚刚导出的 JSON 文件
+4. 开始回放，查看完整的运行过程！
+
+恭喜！你已经掌握了 O-Spy 的基本使用方法 🎉
+
